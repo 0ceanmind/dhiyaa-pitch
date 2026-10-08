@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>When Iron Runs Low · PBL Group B-1</title>
+  <meta name="description" content="An interactive presentation by PBL Group B-1 (under Dr. Waqas Hameed): red bone marrow, liver and spleen histology, iron and red-cell recycling, erythropoiesis, red-cell indices and the biochemistry of iron-deficiency anemia.">
+  <meta name="theme-color" content="#000000">
+  <meta property="og:title" content="When Iron Runs Low · PBL Group B-1">
+  <meta property="og:description" content="Interactive presentation: red bone marrow, liver and spleen, iron recycling, red-cell indices and the biochemistry of iron-deficiency anemia. Under Dr. Waqas Hameed.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./assets/vendor/three/three.module.min.js",
+        "three/addons/": "./assets/vendor/three/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+<div id="veil"><div class="dot"></div></div>
+
+<div id="viewport">
+<main id="stage">
+
+<!-- ===================================================================== 01 TITLE -->
+<section class="slide s-title" id="title" data-module="hero" data-title="When iron runs low" data-section="Introduction" data-hud="off">
+  <div class="full-vis" data-vis></div>
+  <div class="hd">
+    <p class="eyebrow rv">MD 2 · PBL Group B-1 · 2026–2027</p>
+    <h1 class="t-display rv">When iron<br>runs low.</h1>
+    <p class="t-lead rv">From marrow to molecule: how chronic blood loss ends in small, pale red cells.</p>
+    <div class="meta rv">
+      <span class="t-label">Research under the supervision of Dr.&nbsp;Waqas&nbsp;Hameed</span>
+      <span class="t-cap">Problem-Based Learning · Group B-1</span>
+    </div>
+  </div>
+  <div class="hint rv"><span class="kbd">→</span> to begin <span class="c-3">·</span> <span class="kbd">S</span> presenter view <span class="c-3">·</span> <span class="kbd">?</span> shortcuts</div>
+  <aside class="notes">
+    <p>Welcome. Our case is a patient with iron-deficiency anemia caused by heavy menstrual bleeding.</p>
+    <p>We will follow iron from the bone marrow, through the liver and spleen, to the molecules of heme synthesis, then show how her blood count proves it.</p>
+    <p>The red cell on screen is modelled to Guyton's dimensions: about 7.8 µm across, 2.5 µm thick at the rim and about 1 µm at the centre.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 02 CASE -->
+<section class="slide s-case" id="case" data-module="case" data-title="Meet the patient" data-section="Introduction">
+  <div class="hd">
+    <p class="eyebrow rv">The case</p>
+    <h2 class="t-title rv">Meet our patient.</h2>
+  </div>
+  <div class="cols">
+    <div>
+      <p class="t-cap rv">PRESENTING WITH</p>
+      <div class="sym">
+        <span class="rv">Fatigue</span>
+        <span class="rv">Dizziness</span>
+        <span class="rv">Shortness of breath</span>
+        <span class="rv">Palpitations</span>
+        <span class="rv">Pallor</span>
+        <span class="rv">Tachycardia</span>
+      </div>
+    </div>
+    <div class="hist" data-step="1">
+      <p class="t-cap">HISTORY</p>
+      <p class="t-lead">Heavy, prolonged menstrual bleeding for several months.</p>
+      <p class="t-lead">A diet with limited iron-rich foods.</p>
+    </div>
+  </div>
+  <div class="labs" data-step="2">
+    <span class="chip">Hb <b class="num">8.9 g/dL</b></span>
+    <span class="chip">MCV <b class="num">68 fL</b></span>
+    <span class="chip">Reticulocytes <b class="num">0.7%</b></span>
+    <span class="chip">Blood film: microcytic · hypochromic · anisocytosis</span>
+  </div>
+  <div class="question" data-step="3">
+    <p class="t-display">How does losing blood<br>end in <span class="grad-text">small, pale red cells?</span></p>
+  </div>
+  <aside class="notes">
+    <p>Symptoms: fatigue, dizziness, shortness of breath, palpitations, pallor and tachycardia.</p>
+    <p>History: heavy, prolonged menstrual bleeding for several months; diet limited in iron-rich foods.</p>
+    <p>Key results: Hb 8.9 g/dL, MCV 68 fL, reticulocytes 0.7%, film shows microcytic hypochromic cells with anisocytosis.</p>
+    <p>The question that drives our six SLOs: how does losing blood end in small, pale red cells?</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 03 ROADMAP -->
+<section class="slide s-roadmap" id="roadmap" data-module="roadmap" data-title="Six learning objectives" data-section="Introduction">
+  <div class="hd">
+    <p class="eyebrow rv">Our journey</p>
+    <h2 class="t-title rv">Six questions. One patient.</h2>
+  </div>
+  <div class="tiles">
+    <button class="tile rv" data-goto="d1"><span class="n grad-text">01</span><span class="code">B-1.1</span><div class="t">Red bone marrow</div><div class="q">Where are red cells made?</div></button>
+    <button class="tile rv" data-goto="d2"><span class="n grad-text">02</span><span class="code">B-1.2</span><div class="t">Liver &amp; spleen</div><div class="q">What do they look like under the microscope?</div></button>
+    <button class="tile rv" data-goto="d3"><span class="n grad-text">03</span><span class="code">B-1.3</span><div class="t">Recycling</div><div class="q">How are old red cells and their iron reused?</div></button>
+    <button class="tile rv" data-goto="d4"><span class="n grad-text">04</span><span class="code">B-1.4</span><div class="t">Life cycle</div><div class="q">How are red cells made and destroyed, and what goes wrong?</div></button>
+    <button class="tile rv" data-goto="d5"><span class="n grad-text">05</span><span class="code">B-1.5</span><div class="t">The numbers</div><div class="q">What do Hb, Hct, MCV, MCH, MCHC and RDW tell us?</div></button>
+    <button class="tile rv" data-goto="d6"><span class="n grad-text">06</span><span class="code">B-1.6</span><div class="t">The molecules</div><div class="q">What changes biochemically when iron runs out?</div></button>
+  </div>
+  <aside class="notes">
+    <p>Six student learning objectives (SLOs). Each tile is clickable if you want to jump during questions.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 04 DIVIDER 1 -->
+<section class="slide s-divider" id="d1" data-title="01 · Red bone marrow" data-section="SLO 1 · Red Bone Marrow" data-hud="off">
+  <div class="orb" style="--c1:#ff3b52;--c2:#ff9f0a"></div>
+  <p class="eyebrow rv">B-1.1 <span class="code">SLO 1</span></p>
+  <div class="big-n grad-text rv">01</div>
+  <h2 class="t-display rv">Red bone marrow</h2>
+  <p class="t-lead rv">Where are red cells made, and what does the factory look like?</p>
+  <aside class="notes"><p>SLO 1: Structure of red bone marrow.</p></aside>
+</section>
+
+<!-- ===================================================================== 05 HEMATOPOIESIS -->
+<section class="slide" id="hemato" data-module="hematopoiesis" data-title="Hematopoiesis" data-section="SLO 1 · Red Bone Marrow">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.1 <span class="code">Structure of red bone marrow</span></p>
+    <h2 class="t-title rv">A tissue built to make blood.</h2>
+  </div>
+  <div class="split wide-r">
+    <div class="col center stack">
+      <p class="t-lead rv">Red bone marrow is a <span class="strong">highly vascular connective tissue</span> responsible for <span class="strong">hematopoiesis</span>, the continuous production of blood cells.</p>
+      <p class="t-body" data-step="1"><span class="strong">Multipotent hematopoietic stem cells</span> proliferate and differentiate into the blood-cell lineages.</p>
+      <p class="t-body" data-step="2">Their development is regulated by <span class="strong">stem cell factor (SCF)</span>, <span class="strong">cytokines</span> and <span class="strong">erythropoietin</span>.</p>
+    </div>
+    <div class="col"><div class="vis" data-vis></div></div>
+  </div>
+  <aside class="notes">
+    <p>Red marrow = highly vascular connective tissue; job = hematopoiesis, the continuous production of blood cells.</p>
+    <p>Multipotent hematopoietic stem cells proliferate and differentiate into all lineages: erythrocytes, leukocytes and platelets.</p>
+    <p>Regulators: stem cell factor, cytokines, erythropoietin.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 06 MARROW 3D -->
+<section class="slide s-3d" id="marrow" data-module="marrow" data-title="Inside the marrow (3D)" data-section="SLO 1 · Red Bone Marrow">
+  <div class="full-vis right" data-vis></div>
+  <div class="hd">
+    <p class="eyebrow rv">B-1.1 <span class="code">Structure of red bone marrow</span></p>
+    <h2 class="t-title rv">Inside the marrow.</h2>
+  </div>
+  <div class="split">
+    <div class="col center">
+      <div class="captions rv" style="min-height:470px">
+        <div class="cap" data-cap="0">
+          <div class="k">Architecture</div>
+          <p class="t-h2">Cords between sinusoids</p>
+          <p class="t-body">Marrow cords of developing cells are separated by wide <span class="strong">vascular sinusoids</span>.</p>
+        </div>
+        <div class="cap" data-cap="1">
+          <div class="k">Support</div>
+          <p class="t-h2">A reticular scaffold</p>
+          <p class="t-body"><span class="strong">Reticular cells</span> and <span class="strong">reticulin fibers (type III collagen)</span> support the cords, which hold developing blood cells, macrophages, adipocytes, plasma cells and megakaryocytes.</p>
+        </div>
+        <div class="cap" data-cap="2">
+          <div class="k">Erythroblastic island</div>
+          <p class="t-h2">A macrophage nursery</p>
+          <p class="t-body">Erythroid precursors cluster around a <span class="strong">central macrophage</span>, which supports them and helps regulate their maturation and release.</p>
+        </div>
+        <div class="cap" data-cap="3">
+          <div class="k">Megakaryocyte</div>
+          <p class="t-h2">Platelets, straight into blood</p>
+          <p class="t-body">Megakaryocytes lie <span class="strong">beside the sinusoids</span>, so they release platelets directly into the circulation.</p>
+        </div>
+        <div class="cap" data-cap="4">
+          <div class="k">Release</div>
+          <p class="t-h2">Crossing the wall</p>
+          <p class="t-body">Mature blood cells cross the <span class="strong">sinusoidal wall</span> to enter the bloodstream.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  <p class="cite">Drag the model to rotate · Schematic, not to scale</p>
+  <aside class="notes">
+    <p>Step through: cords and sinusoids, then reticular cells and reticulin (type III collagen), then the erythroblastic island around a macrophage, then megakaryocytes beside sinusoids shedding platelets, then mature cells crossing the sinusoid wall.</p>
+    <p>You can drag the 3D model to rotate it.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 07 SKELETON -->
+<section class="slide" id="skeleton" data-module="skeleton" data-title="Red vs yellow marrow" data-section="SLO 1 · Red Bone Marrow">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.1 <span class="code">Structure of red bone marrow</span></p>
+    <h2 class="t-title rv">Red marrow retreats with age.</h2>
+  </div>
+  <div class="split">
+    <div class="col center stack">
+      <div class="rv" data-seg></div>
+      <div class="captions rv" style="min-height:420px">
+        <div class="cap" data-cap="0">
+          <p class="t-h2">Childhood</p>
+          <p class="t-body">Until about <span class="strong">5 years</span> of age, the marrow of essentially all bones produces red cells.</p>
+        </div>
+        <div class="cap" data-cap="1">
+          <p class="t-h2">Adulthood</p>
+          <p class="t-body">Active red marrow lies mainly in the <span class="strong">axial skeleton</span>: vertebrae, sternum, ribs and ilia. Most of the remaining marrow becomes <span class="strong" style="color:var(--fat)">yellow marrow</span>, which is mostly adipose tissue.</p>
+          <p class="t-cap" style="margin-top:18px">After about age 20, long-bone marrow becomes fatty, except in the proximal humeri and tibiae.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col"><div class="vis" data-vis></div></div>
+  </div>
+  <p class="cite">Source: <b>Guyton &amp; Hall</b>, Textbook of Medical Physiology, Ch. 33 · Schematic skeleton</p>
+  <aside class="notes">
+    <p>In adults, active red marrow is mainly in the axial skeleton; much of the rest becomes yellow (adipose) marrow.</p>
+    <p>Guyton: all bones produce red cells until about age 5; after about 20, long-bone marrow (except proximal humeri and tibiae) is fatty; adult red cells come mainly from vertebrae, sternum, ribs and ilia.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 08 DIVIDER 2 -->
+<section class="slide s-divider" id="d2" data-title="02 · Liver & spleen" data-section="SLO 2 · Liver & Spleen" data-hud="off">
+  <div class="orb" style="--c1:#e8a58f;--c2:#8e8cff"></div>
+  <p class="eyebrow rv">B-1.2 <span class="code">SLO 2</span></p>
+  <div class="big-n grad-text rv">02</div>
+  <h2 class="t-display rv">Liver &amp; spleen</h2>
+  <p class="t-lead rv">The histology of the two organs that clean up after red cells.</p>
+  <aside class="notes"><p>SLO 2: Histological structure of the liver and spleen.</p></aside>
+</section>
+
+<!-- ===================================================================== 09 LOBULE 3D -->
+<section class="slide s-3d" id="lobule" data-module="lobule" data-title="The hepatic lobule (3D)" data-section="SLO 2 · Liver & Spleen">
+  <div class="full-vis right" data-vis></div>
+  <div class="hd">
+    <p class="eyebrow rv">B-1.2 <span class="code">Histology of the liver</span></p>
+    <h2 class="t-title rv">The hepatic lobule.</h2>
+  </div>
+  <div class="split">
+    <div class="col center">
+      <div class="captions rv" style="min-height:440px">
+        <div class="cap" data-cap="0">
+          <div class="k">Structural unit</div>
+          <p class="t-h2">Roughly hexagonal</p>
+          <p class="t-body">The liver is organized into <span class="strong">hepatic lobules</span>, roughly hexagonal structural units.</p>
+        </div>
+        <div class="cap" data-cap="1">
+          <div class="k">Hepatocytes</div>
+          <p class="t-h2">Plates of liver cells</p>
+          <p class="t-body">The main liver cells, arranged in <span class="strong">plates or cords</span>.</p>
+        </div>
+        <div class="cap" data-cap="2">
+          <div class="k">Portal triad</div>
+          <p class="t-h2">Three vessels at each corner</p>
+          <p class="t-body">A branch of the <span class="strong" style="color:var(--portal)">portal vein</span>, the <span class="strong" style="color:var(--artery)">hepatic artery</span> and the <span class="strong" style="color:var(--bile)">bile duct</span>.</p>
+        </div>
+        <div class="cap" data-cap="3">
+          <div class="k">Sinusoids → central vein</div>
+          <p class="t-h2">Blood flows inward</p>
+          <p class="t-body">Specialized blood channels between the plates drain into the <span class="strong" style="color:var(--vein)">central vein</span> at the center of the lobule.</p>
+        </div>
+        <div class="cap" data-cap="4">
+          <div class="k">Kupffer cells</div>
+          <p class="t-h2">Macrophages on guard</p>
+          <p class="t-body">They line the sinusoids and remove <span class="strong">foreign particles and cellular debris</span>.</p>
+        </div>
+        <div class="cap" data-cap="5">
+          <div class="k">Bile canaliculi</div>
+          <p class="t-h2">Bile flows outward</p>
+          <p class="t-body">Small channels between hepatocytes collect <span class="strong" style="color:var(--bile)">bile</span> and direct it toward the <span class="strong">bile ducts</span>, the opposite direction to blood.</p>
+        </div>
+      </div>
+      <div class="rv" data-seg style="margin-top:20px"></div>
+    </div>
+    <div class="col"></div>
+  </div>
+  <p class="cite">Sources: <b>NCBI Bookshelf</b>, Anatomy, Abdomen and Pelvis: Liver · <b>Cullen</b>, normal liver histology · <b>Krishna</b>, Clin Liver Dis 2013 · Drag to rotate</p>
+  <aside class="notes">
+    <p>Hexagonal lobule. Hepatocytes in plates. Portal triad at the corners: portal vein branch, hepatic artery, bile duct. Sinusoids carry blood to the central vein. Kupffer cells line the sinusoids. Bile canaliculi carry bile toward the bile ducts.</p>
+    <p>Use the Blood / Bile switch to show the two opposite flows.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 10 SPLEEN -->
+<section class="slide" id="spleen" data-module="spleen" data-title="Histology of the spleen" data-section="SLO 2 · Liver & Spleen">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.2 <span class="code">Histology of the spleen</span></p>
+    <h2 class="t-title rv">The spleen.</h2>
+  </div>
+  <div class="split">
+    <div class="col center">
+      <div class="captions rv" style="min-height:440px">
+        <div class="cap" data-cap="0">
+          <div class="k">Overview</div>
+          <p class="t-h2">A capsule and two kinds of pulp</p>
+          <p class="t-body">The spleen is surrounded by a <span class="strong">connective-tissue capsule</span> and contains two main histological regions.</p>
+        </div>
+        <div class="cap" data-cap="1">
+          <div class="k">Trabeculae</div>
+          <p class="t-h2">Internal scaffolding</p>
+          <p class="t-body">Extensions of connective tissue from the capsule that provide <span class="strong">structural support</span>.</p>
+        </div>
+        <div class="cap" data-cap="2">
+          <div class="k">White pulp</div>
+          <p class="t-h2">The immune tissue</p>
+          <p class="t-body">Lymphoid tissue rich in <span class="strong">lymphocytes</span>. It surrounds branches of the <span class="strong" style="color:var(--artery)">splenic artery</span> and is mainly involved in <span class="strong">immune responses</span>.</p>
+        </div>
+        <div class="cap" data-cap="3">
+          <div class="k">Red pulp</div>
+          <p class="t-h2">The blood filter</p>
+          <p class="t-body">Mainly <span class="strong">splenic cords</span> and <span class="strong">sinusoids</span>. It filters blood and helps remove <span class="strong">old or damaged red cells</span>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col"><div class="vis" data-vis></div></div>
+  </div>
+  <p class="cite">Source: <b>OpenStax</b> Biology, Adaptive Immune Response · Schematic section</p>
+  <aside class="notes">
+    <p>Capsule of connective tissue; trabeculae extend inward for support.</p>
+    <p>White pulp: lymphocyte-rich lymphoid tissue around branches of the splenic artery, mainly immune.</p>
+    <p>Red pulp: splenic cords and sinusoids; filters blood and removes old or damaged red cells. This is where SLO 3 picks up.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 11 DIVIDER 3 -->
+<section class="slide s-divider" id="d3" data-title="03 · Recycling iron & red cells" data-section="SLO 3 · Recycling" data-hud="off">
+  <div class="orb" style="--c1:#ff9f0a;--c2:#40c8e0"></div>
+  <p class="eyebrow rv">B-1.3 <span class="code">SLO 3</span></p>
+  <div class="big-n grad-text rv">03</div>
+  <h2 class="t-display rv">The recycling plant</h2>
+  <p class="t-lead rv">How the liver and spleen recycle old red cells and their iron.</p>
+  <aside class="notes"><p>SLO 3: Roles of the liver and spleen in recycling iron and red blood cells.</p></aside>
+</section>
+
+<!-- ===================================================================== 12 SLIT -->
+<section class="slide" id="slit" data-module="slit" data-title="The spleen's stress test" data-section="SLO 3 · Recycling">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.3 <span class="code">Spleen and removal of old RBCs</span></p>
+    <h2 class="t-title rv">The spleen's stress test.</h2>
+  </div>
+  <div class="split wide-r">
+    <div class="col center">
+      <p class="t-lead rv" style="margin-bottom:40px">In the red pulp, red cells about <span class="strong">8&nbsp;µm</span> across must squeeze through spaces only about <span class="strong">3&nbsp;µm</span> wide.</p>
+      <div class="captions rv" style="min-height:300px">
+        <div class="cap" data-cap="0">
+          <p class="t-h2 c-good">Young cell: bends and passes</p>
+          <p class="t-body">A flexible membrane lets it fold through the slit.</p>
+        </div>
+        <div class="cap" data-cap="1">
+          <p class="t-h2 c-bad">Old cell: fragile, it ruptures</p>
+          <p class="t-body">Ageing membranes lose pliability. Old, damaged and abnormal cells are filtered out.</p>
+        </div>
+        <div class="cap" data-cap="2">
+          <p class="t-h2" style="color:var(--macro)">Phagocytosis</p>
+          <p class="t-body">Red-pulp <span class="strong">macrophages</span> engulf and destroy the old cells, then recycle what is inside.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col"><div class="vis" data-vis></div></div>
+  </div>
+  <p class="cite">Source: <b>Guyton &amp; Hall</b>, Ch. 33 (3 µm spaces vs ~8 µm cells) · Animation not to scale in time</p>
+  <aside class="notes">
+    <p>The spleen, in the left upper abdomen, filters blood and removes old, damaged and abnormal red cells, mainly in the red pulp.</p>
+    <p>Guyton: spaces between red-pulp trabeculae are only about 3 µm wide, versus an ~8 µm red cell. Young cells deform and pass; fragile old cells rupture and are phagocytosed by macrophages.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 13 MACROPHAGE -->
+<section class="slide" id="macrophage" data-module="macrophage" data-title="Inside a red-pulp macrophage" data-section="SLO 3 · Recycling">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.3 <span class="code">Iron recycling</span></p>
+    <h2 class="t-title rv">Inside a red-pulp macrophage.</h2>
+  </div>
+  <div class="split wide-r">
+    <div class="col center">
+      <div class="captions rv" style="min-height:520px">
+        <div class="cap" data-cap="0">
+          <div class="k">1 · Erythrophagocytosis</div>
+          <p class="t-h2">Engulfing old cells</p>
+          <p class="t-body">Red-pulp macrophages of the spleen, a <span class="strong">major site of iron recycling</span>, recognize and engulf senescent red cells.</p>
+        </div>
+        <div class="cap" data-cap="1">
+          <div class="k">2 · Breakdown</div>
+          <p class="t-h2">Freeing the iron</p>
+          <p class="t-body">Hemoglobin splits into <span class="strong">globin</span> (to amino acids) and <span class="strong">heme</span>. Heme oxygenase-1 (<span class="strong">HO-1</span>) degrades heme, releasing <span class="strong c-iron">free iron</span>.</p>
+        </div>
+        <div class="cap" data-cap="2">
+          <div class="k">3 · Export</div>
+          <p class="t-h2">Through ferroportin</p>
+          <p class="t-body"><span class="strong c-fpn">Ferroportin</span>, the only known cellular iron exporter, moves iron into plasma, where it binds <span class="strong c-iron">transferrin</span> for delivery to the bone marrow.</p>
+        </div>
+        <div class="cap" data-cap="3" data-cap-to="5">
+          <div class="k">4 · The master switch</div>
+          <p class="t-h2"><span class="c-hep">Hepcidin</span> from the liver</p>
+          <p class="t-body" data-hep-text>Hepcidin binds ferroportin, causing its internalization and degradation.</p>
+        </div>
+      </div>
+      <div class="rv" data-seg style="margin-top:12px"></div>
+    </div>
+    <div class="col"><div class="vis" data-vis></div></div>
+  </div>
+  <p class="cite">Sources: <b>Nemeth &amp; Ganz</b>, Int J Mol Sci 2021 (hepcidin–ferroportin) · <b>Slusarczyk &amp; Mleczko-Sanecka</b>, Genes 2021 (iron recycling) · Schematic</p>
+  <aside class="notes">
+    <p>A major site of iron recycling: red-pulp macrophages of the spleen (Kupffer cells of the liver also contribute). Erythrophagocytosis, then HO-1 degrades heme, releasing iron.</p>
+    <p>Ferroportin is the only known cellular iron exporter. In plasma, iron binds transferrin for delivery to the marrow.</p>
+    <p>Hepcidin (from the liver) binds ferroportin → internalization and degradation → iron trapped. Iron deficiency: hepcidin suppressed, more iron released. Inflammation: IL-6 raises hepcidin → hypoferremia of anemia of inflammation.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 14 LIVER ROLE -->
+<section class="slide" id="liverrole" data-module="liverrole" data-title="The liver's role" data-section="SLO 3 · Recycling">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.3 <span class="code">Role of the liver</span></p>
+    <h2 class="t-title rv">Two products, two destinations.</h2>
+    <p class="t-lead rv">After about 120 days, old red cells are removed by <span class="strong">Kupffer cells</span> in the liver and by <span class="strong">macrophages</span> in the spleen and bone marrow.</p>
+  </div>
+  <div class="body-area"><div class="vis" data-vis></div></div>
+  <p class="cite">Sources: <b>Guyton &amp; Hall</b>, Ch. 33 · <b>StatPearls</b>, Physiology, Bilirubin</p>
+  <aside class="notes">
+    <p>Hemoglobin is broken down. Iron returns to blood, binds transferrin, and goes either to the marrow for new red cells or is stored in the liver as ferritin.</p>
+    <p>The porphyrin part becomes bilirubin. Unconjugated bilirubin travels on albumin, is taken up by the liver, conjugated by UDP-glucuronosyltransferase (more water-soluble) and secreted into bile.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 15 LEAK -->
+<section class="slide" id="leak" data-module="leak" data-title="Recycling can't outrun a leak" data-section="SLO 3 · Recycling">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.3 <span class="code">In our patient</span></p>
+    <h2 class="t-title rv">Recycling can't outrun a leak.</h2>
+  </div>
+  <div class="split wide-r" style="grid-template-columns: 1fr 640px">
+    <div class="col"><div class="vis" data-vis></div></div>
+    <div class="col center stack">
+      <div data-step="1">
+        <p class="t-cap" style="margin-bottom:18px">AVERAGE LONG-TERM IRON LOSS</p>
+        <div data-chart></div>
+      </div>
+      <p class="t-body" data-step="2">The spleen recycles iron from old cells, but recycling <span class="strong">cannot compensate for continuous blood loss</span>. Hemoglobin production falls, and anemia follows.</p>
+    </div>
+  </div>
+  <p class="cite">Iron-loss values: <b>Guyton &amp; Hall</b>, Ch. 33</p>
+  <aside class="notes">
+    <p>Closed loop: marrow → circulating red cells → macrophages → transferrin → marrow. Every red cell lost in bleeding takes its iron out of the loop.</p>
+    <p>Guyton: men lose about 0.6 mg iron/day; in women, menstrual loss brings the long-term average to about 1.3 mg/day. Our patient's bleeding is heavy and prolonged.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 16 DIVIDER 4 -->
+<section class="slide s-divider" id="d4" data-title="04 · Life cycle of a red cell" data-section="SLO 4 · Life Cycle" data-hud="off">
+  <div class="orb" style="--c1:#ff3b52;--c2:#bf5af2"></div>
+  <p class="eyebrow rv">B-1.4 <span class="code">SLO 4</span></p>
+  <div class="big-n grad-text rv">04</div>
+  <h2 class="t-display rv">Made, used, destroyed</h2>
+  <p class="t-lead rv">Synthesis and breakdown of red cells, and what happens when the balance fails: anemia and polycythemia.</p>
+  <aside class="notes"><p>SLO 4: Synthesis of red cells, their breakdown, and their relationship to anemia and polycythemia.</p></aside>
+</section>
+
+<!-- ===================================================================== 17 ERYTHROPOIESIS -->
+<section class="slide" id="erythro" data-module="erythro" data-title="Erythropoiesis" data-section="SLO 4 · Life Cycle">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.4 <span class="code">Synthesis of red blood cells</span></p>
+    <h2 class="t-title rv">Building a red cell.</h2>
+    <p class="t-lead rv">Erythropoiesis normally occurs in the bone marrow. <span class="strong c-iron">Iron</span> is essential for heme and hemoglobin synthesis along the way.</p>
+  </div>
+  <div class="body-area"><div class="vis" data-vis></div></div>
+  <div style="position:absolute; left:128px; bottom:110px; z-index:4" class="row">
+    <div data-seg></div>
+    <p class="t-body" data-step="2" style="margin-left:24px; max-width:1050px">Without enough iron, the cells come out <span class="strong">smaller</span> with <span class="strong">less hemoglobin</span>: MCV 68 fL, low MCH and MCHC.</p>
+  </div>
+  <aside class="notes">
+    <p>Hematopoietic stem cell → proerythroblast → erythroblasts → reticulocyte → mature erythrocyte. Hemoglobin accumulates as the cell matures; the nucleus is lost.</p>
+    <p>Patient: chronic menstrual loss plus low dietary iron → stores depleted → not enough iron for hemoglobin synthesis → smaller, paler cells (MCV 68 fL, low MCH and MCHC; film microcytic, hypochromic, anisocytosis).</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 18 EPO -->
+<section class="slide" id="epo" data-module="epo" data-title="The erythropoietin loop" data-section="SLO 4 · Life Cycle">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.4 <span class="code">Synthesis of red blood cells</span></p>
+    <h2 class="t-title rv">The kidney calls. The marrow can't answer.</h2>
+  </div>
+  <div class="split" style="grid-template-columns: 1fr 600px">
+    <div class="col"><div class="vis" data-vis></div></div>
+    <div class="col center stack">
+      <p class="t-body rv">Low hemoglobin reduces oxygen-carrying capacity. Tissue hypoxia makes the <span class="strong">kidney</span> increase <span class="strong">erythropoietin</span>, which stimulates the marrow.</p>
+      <p class="t-body" data-step="2">But with <span class="strong c-iron">iron deficient</span>, the marrow cannot make adequately hemoglobinized cells.</p>
+      <div class="card" data-step="3">
+        <p class="t-cap">RETICULOCYTE COUNT</p>
+        <p class="t-display num" style="font-size:110px; margin:6px 0 4px">0.7<span style="font-size:60px">%</span></p>
+        <p class="t-body" style="font-size:30px">Not the rise expected for this degree of anemia.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Low Hb → less O2 carried → tissue hypoxia → kidney raises erythropoietin → marrow stimulated.</p>
+    <p>But iron is deficient, so the marrow cannot make adequately hemoglobinized cells. Reticulocyte count 0.7% does not show an appropriate increase for the degree of anemia.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 19 LIFESPAN -->
+<section class="slide" id="lifespan" data-module="lifespan" data-title="120 days, then recycled" data-section="SLO 4 · Life Cycle">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.4 <span class="code">Breakdown of red blood cells</span></p>
+    <h2 class="t-title rv">120 days, then recycled.</h2>
+  </div>
+  <div class="body-area"><div class="vis" data-vis></div></div>
+  <aside class="notes">
+    <p>Average lifespan ~120 days. With age, metabolic systems become less active, the membrane loses pliability and becomes fragile.</p>
+    <p>Old cells rupture in tight spots, especially the red pulp of the spleen. Released hemoglobin is phagocytosed, especially by Kupffer cells and by macrophages of spleen and marrow.</p>
+    <p>Iron → transferrin → marrow (new cells) or liver/tissues as ferritin. Porphyrin → bilirubin → secreted by the liver into bile.</p>
+    <p>Drag the slider to age the cell.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 20 ANEMIA 3D -->
+<section class="slide s-anemia" id="anemia" data-module="anemia" data-title="Types of anemia (3D)" data-section="SLO 4 · Life Cycle">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.4 <span class="code">Relationship to anemia</span></p>
+    <h2 class="t-title rv">Anemia.</h2>
+    <p class="t-lead rv">A deficiency of <span class="strong">hemoglobin</span> in the blood, from too few red cells or too little hemoglobin in each.</p>
+  </div>
+  <div class="split" style="grid-template-columns: 620px 1fr; margin-top:28px">
+    <div class="col"><div class="typelist rv" data-list></div></div>
+    <div class="col">
+      <div class="vis" data-vis style="position:absolute; inset:-40px 0 120px 0"></div>
+      <div class="desc rv" data-desc style="position:absolute; left:0; right:0; bottom:0"></div>
+    </div>
+  </div>
+  <p class="cite">Source: <b>Guyton &amp; Hall</b>, Ch. 33 · 3D cells are schematic</p>
+  <aside class="notes">
+    <p>Blood loss: acute (plasma is replaced, diluting the red cells) and chronic (iron cannot be absorbed fast enough → microcytic hypochromic cells, our patient).</p>
+    <p>Aplastic: marrow failure from radiation, chemotherapy, toxic substances or autoimmune disease; about half idiopathic.</p>
+    <p>Megaloblastic: lack of B12, folic acid or intrinsic factor (gastric mucosal atrophy, gastrectomy, malabsorption) → large, fragile cells.</p>
+    <p>Hemolytic, e.g. hereditary spherocytosis: spherical cells rupture in the spleen. Sickle cell: HbS crystallizes at low O2 → sickle shape, membrane damage, vessel blockage.</p>
+    <p>Erythroblastosis fetalis: antibodies from an Rh-negative mother attack Rh-positive fetal cells. Severe hypochromic anemia: transferrin deficiency.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 21 POLYCYTHEMIA -->
+<section class="slide" id="polycythemia" data-module="polycythemia" data-title="Polycythemia" data-section="SLO 4 · Life Cycle">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.4 <span class="code">Relationship to polycythemia</span></p>
+    <h2 class="t-title rv">Polycythemia: too many red cells.</h2>
+  </div>
+  <div class="split" style="grid-template-columns: 640px 1fr">
+    <div class="col center stack">
+      <div class="card" data-step="1">
+        <p class="t-label" style="color:var(--iron)">Secondary polycythemia</p>
+        <p class="t-body" style="margin-top:10px">A physiological response to <span class="strong">hypoxia</span>, such as high altitude or heart failure. Count rises to <span class="strong num">6–7 million/mm³</span>.</p>
+      </div>
+      <div class="card" data-step="2">
+        <p class="t-label" style="color:var(--blood)">Polycythemia vera (erythremia)</p>
+        <p class="t-body" style="margin-top:10px">A <span class="strong">genetic defect in stem cells</span> causes excessive, continuous production. Count <span class="strong num">7–8 million/mm³</span>, hematocrit <span class="strong num">60–70%</span>.</p>
+      </div>
+    </div>
+    <div class="col"><div class="vis" data-vis></div></div>
+  </div>
+  <p class="cite">Source: <b>Guyton &amp; Hall</b>, Ch. 33 · 1 mm³ = 1 µL, so 4.1 × 10⁶/µL = 4.1 million/mm³</p>
+  <aside class="notes">
+    <p>Chart: red cell count in million per mm³. Our patient 4.1; Guyton's normal values are 4.7 ± 0.3 for women and 5.2 ± 0.3 for men.</p>
+    <p>Secondary polycythemia (hypoxia: altitude, heart failure) 6–7 million/mm³. Polycythemia vera, a stem-cell genetic defect: 7–8 million/mm³, hematocrit 60–70%.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 22 VISCOSITY -->
+<section class="slide" id="viscosity" data-module="viscosity" data-title="Thin blood, thick blood" data-section="SLO 4 · Life Cycle">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.4 <span class="code">Effects on the circulatory system</span></p>
+    <h2 class="t-title rv">Thin blood, thick blood.</h2>
+  </div>
+  <div class="rv" data-seg style="margin-top:34px"></div>
+  <div class="body-area" style="margin-top:28px"><div class="vis" data-vis></div></div>
+  <p class="cite">Source: <b>Guyton &amp; Hall</b>, Ch. 33 · Viscosity relative to water</p>
+  <aside class="notes">
+    <p>Severe anemia: viscosity falls to ~1.5× water (normal ~3×). Lower resistance plus hypoxic vasodilation raise cardiac output up to 3–4× normal. On exertion: severe hypoxia and heart failure.</p>
+    <p>Polycythemia vera: total blood volume can double and viscosity rises to ~10× water. Flow is sluggish, but cardiac output stays near normal because the high viscosity is balanced by the bigger blood volume. Hypertension in about one-third. Ruddy complexion with a bluish (cyanotic) tint.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 23 DIVIDER 5 -->
+<section class="slide s-divider" id="d5" data-title="05 · Reading the numbers" data-section="SLO 5 · The Numbers" data-hud="off">
+  <div class="orb" style="--c1:#64d2ff;--c2:#ff3b52"></div>
+  <p class="eyebrow rv">B-1.5 <span class="code">SLO 5</span></p>
+  <div class="big-n grad-text rv">05</div>
+  <h2 class="t-display rv">Reading the numbers</h2>
+  <p class="t-lead rv">How hemoglobin, hematocrit, RBC count, MCV, MCH, MCHC and RDW fit together.</p>
+  <aside class="notes"><p>SLO 5: Relate hemoglobin, hematocrit, MCV, MCH, MCHC, RDW and RBC count.</p></aside>
+</section>
+
+<!-- ===================================================================== 24 HCT -->
+<section class="slide" id="hct" data-module="hct" data-title="Hb, Hct and RBC count" data-section="SLO 5 · The Numbers">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.5 <span class="code">Hemoglobin &amp; hematocrit</span></p>
+    <h2 class="t-title rv">Three numbers, three questions.</h2>
+  </div>
+  <div class="split" style="grid-template-columns: 700px 1fr">
+    <div class="col center">
+      <div class="stack">
+        <div class="rv"><p class="t-label c-blood">RBC count</p><p class="t-body">How many red cells are in a volume of blood?</p></div>
+        <div class="rv"><p class="t-label" style="color:var(--iron)">Hematocrit (Hct)</p><p class="t-body">What percentage of blood volume do they occupy?</p></div>
+        <div class="rv"><p class="t-label c-o2">Hemoglobin (Hb)</p><p class="t-body">How much oxygen-carrying protein is present?</p></div>
+        <p class="t-body strong" data-step="2" style="color:var(--text)">Related, but not interchangeable.</p>
+      </div>
+    </div>
+    <div class="col"><div class="vis" data-vis></div></div>
+  </div>
+  <aside class="notes">
+    <p>RBC count = number of red cells in a volume of blood. Hematocrit = percentage of blood volume occupied by red cells (Hct 45% → about 45% of blood is red cells). Hemoglobin = the oxygen-carrying protein, so it reflects oxygen-carrying capacity.</p>
+    <p>Not interchangeable: two people can have the same RBC count, but larger cells give a higher hematocrit, and the count can be the same while hemoglobin is lower.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 25 INDICES -->
+<section class="slide" id="indices" data-module="indices" data-title="MCV, MCH and MCHC" data-section="SLO 5 · The Numbers">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.5 <span class="code">MCV, MCH &amp; MCHC</span></p>
+    <h2 class="t-title rv">Inside the average red cell.</h2>
+  </div>
+  <div class="body-area"><div class="vis" data-vis></div></div>
+  <div style="position:absolute; right:128px; top:118px; z-index:4" data-seg></div>
+  <aside class="notes">
+    <p>MCV, mean corpuscular volume, is the average size: low = microcytic, normal = normocytic, high = macrocytic. It classifies anemia by cell size.</p>
+    <p>MCH, mean corpuscular hemoglobin, is the average amount of hemoglobin in one cell. MCHC is the average concentration of hemoglobin inside cells: low = hypochromic.</p>
+    <p>Patient: MCV 68 fL, MCH 21 pg, MCHC 29 g/dL, all low. Guyton gives the normal cell volume as about 90–95 µm³ (fL).</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 26 RDW -->
+<section class="slide" id="rdw" data-module="rdw" data-title="RDW" data-section="SLO 5 · The Numbers">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.5 <span class="code">Red cell distribution width</span></p>
+    <h2 class="t-title rv">RDW: how different are the sizes?</h2>
+  </div>
+  <div class="split" style="grid-template-columns: 1fr 560px">
+    <div class="col"><div class="vis" data-vis></div></div>
+    <div class="col center stack">
+      <div class="rv"><p class="t-label">MCV</p><p class="t-body">How big the cells are <span class="strong">on average</span>.</p></div>
+      <div class="rv"><p class="t-label" style="color:var(--iron)">RDW</p><p class="t-body">How much their sizes <span class="strong">vary</span>.</p></div>
+      <div class="card" data-step="1">
+        <p class="t-body"><span class="strong">High RDW</span> means the cells differ in size: <span class="strong">anisocytosis</span>. Our patient: <span class="strong num" style="color:var(--iron)">RDW 18% ↑</span></p>
+      </div>
+    </div>
+  </div>
+  <p class="cite">Blood films are schematic</p>
+  <aside class="notes">
+    <p>RDW measures variation in red cell size. High RDW = anisocytosis; normal RDW = cells similar in size.</p>
+    <p>MCV = average size; RDW = variation in size. Patient RDW 18% (high) with low MCV: cells are small and vary a lot in size.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 27 CBC -->
+<section class="slide s-cbc" id="cbc" data-module="cbc" data-title="Our patient's blood count" data-section="SLO 5 · The Numbers">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.5 <span class="code">Applying it to the case</span></p>
+    <h2 class="t-title rv">Our patient's blood count.</h2>
+  </div>
+  <div class="tiles">
+    <div class="tile rv" data-k="rbc"><div class="k">RBC</div><div class="v num">4.1</div><div class="u">× 10⁶/µL</div><div class="ar dn">↓</div></div>
+    <div class="tile rv" data-k="hb"><div class="k">Hb</div><div class="v num">8.9</div><div class="u">g/dL</div><div class="ar dn">↓</div></div>
+    <div class="tile rv" data-k="hct"><div class="k">Hct</div><div class="v num">29</div><div class="u">%</div><div class="ar dn">↓</div></div>
+    <div class="tile rv" data-k="mcv"><div class="k">MCV</div><div class="v num">68</div><div class="u">fL</div><div class="ar dn">↓</div></div>
+    <div class="tile rv" data-k="mch"><div class="k">MCH</div><div class="v num">21</div><div class="u">pg</div><div class="ar dn">↓</div></div>
+    <div class="tile rv" data-k="mchc"><div class="k">MCHC</div><div class="v num">29</div><div class="u">g/dL</div><div class="ar dn">↓</div></div>
+    <div class="tile rv" data-k="rdw"><div class="k">RDW</div><div class="v num">18</div><div class="u">%</div><div class="ar up">↑</div></div>
+  </div>
+  <div class="interp">
+    <div class="it" data-step="1"><div class="a">↓ Hb + ↓ Hct</div><div class="b">Anemia</div></div>
+    <div class="it" data-step="2"><div class="a">↓ MCV</div><div class="b">Microcytic</div></div>
+    <div class="it" data-step="3"><div class="a">↓ MCH + ↓ MCHC</div><div class="b">Hypochromic</div></div>
+    <div class="it" data-step="4"><div class="a">↑ RDW</div><div class="b">Anisocytosis</div></div>
+  </div>
+  <div class="verdict" data-step="5">
+    <p class="t-h2">Microcytic, hypochromic anemia with increased RDW (anisocytosis).</p>
+  </div>
+  <aside class="notes">
+    <p>Read the tiles left to right, then step through the interpretation: low Hb and Hct = anemia; low MCV = microcytic; low MCH and MCHC = hypochromic; high RDW = anisocytosis.</p>
+    <p>Conclusion: microcytic, hypochromic anemia with increased RDW.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 28 PATTERNS -->
+<section class="slide s-patterns" id="patterns" data-module="patterns" data-title="RDW with MCV" data-section="SLO 5 · The Numbers">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.5 <span class="code">RDW and different types of anemia</span></p>
+    <h2 class="t-title rv">Read RDW together with MCV.</h2>
+  </div>
+  <table>
+    <thead><tr><th>Pattern</th><th>Possible condition</th></tr></thead>
+    <tbody>
+      <tr class="rv" data-row="0"><td>↓ MCV + ↑ RDW</td><td>Commonly iron-deficiency anemia <span class="tag" data-step="1">Our patient</span></td></tr>
+      <tr class="rv" data-row="1"><td>↓ MCV + normal RDW</td><td>Can be seen in thalassemia trait</td></tr>
+      <tr class="rv" data-row="2"><td>↑ MCV + ↑ RDW</td><td>Can occur in vitamin B12 / folate deficiency</td></tr>
+    </tbody>
+  </table>
+  <p class="t-body foot" data-step="2">RDW alone <span class="strong">cannot</span> diagnose the cause of anemia. Interpret it with the full CBC and clinical history. <span class="strong">Iron studies</span> confirm iron deficiency.</p>
+  <p class="cite">Source: <b>Warner &amp; Kamran</b>, StatPearls, Iron Deficiency Anemia</p>
+  <aside class="notes">
+    <p>Low MCV + high RDW: commonly iron deficiency (our patient). Low MCV + normal RDW: can be seen in thalassemia trait. High MCV + high RDW: can occur in B12/folate deficiency.</p>
+    <p>Caveat: RDW alone cannot diagnose; interpret with the full CBC and history; iron studies confirm.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 29 MEMORY -->
+<section class="slide s-memory" id="memory" data-title="The four questions" data-section="SLO 5 · The Numbers">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.5 <span class="code">A simple way to remember</span></p>
+    <h2 class="t-title rv">Four questions to ask any CBC.</h2>
+  </div>
+  <div class="rows">
+    <div class="r rv"><span class="a c-blood">Hb / Hct</span><span class="arr">→</span><span class="b">Is there anemia?</span></div>
+    <div class="r rv"><span class="a">MCV</span><span class="arr">→</span><span class="b">What size are the red cells?</span></div>
+    <div class="r rv"><span class="a c-o2">MCH / MCHC</span><span class="arr">→</span><span class="b">How much hemoglobin do they have?</span></div>
+    <div class="r rv"><span class="a c-iron">RDW</span><span class="arr">→</span><span class="b">How different are their sizes?</span></div>
+  </div>
+  <aside class="notes"><p>The RBC indices are interpreted together, not individually. Hb/Hct: is there anemia? MCV: what size? MCH/MCHC: how much hemoglobin? RDW: how different are the sizes? RBC count: how many cells.</p></aside>
+</section>
+
+<!-- ===================================================================== 30 DIVIDER 6 -->
+<section class="slide s-divider" id="d6" data-title="06 · The molecules" data-section="SLO 6 · The Molecules" data-hud="off">
+  <div class="orb" style="--c1:#ff9f0a;--c2:#ff3b52"></div>
+  <p class="eyebrow rv">B-1.6 <span class="code">SLO 6</span></p>
+  <div class="big-n grad-text rv">06</div>
+  <h2 class="t-display rv">The molecules</h2>
+  <p class="t-lead rv">Biochemical changes in microcytic anemia due to iron deficiency: iron binding and transport, enzymes, amino acids and vitamins.</p>
+  <aside class="notes"><p>SLO 6: Biochemical changes in microcytic anemia due to iron deficiency (iron and ferritin binding, transport, amino acids, enzymes, vitamins).</p></aside>
+</section>
+
+<!-- ===================================================================== 31 ABSORPTION -->
+<section class="slide" id="absorption" data-module="absorption" data-title="Iron absorption and transport" data-section="SLO 6 · The Molecules">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.6 <span class="code">Iron metabolism</span></p>
+    <h2 class="t-title rv">Iron in, iron out.</h2>
+  </div>
+  <div class="split" style="grid-template-columns: 1fr 600px">
+    <div class="col"><div class="vis" data-vis></div></div>
+    <div class="col center">
+      <div class="captions" style="min-height:480px">
+        <div class="cap" data-cap="0">
+          <div class="k">Absorption · duodenum</div>
+          <p class="t-h2">Reduce, then enter</p>
+          <p class="t-body">Non-heme iron is reduced to <span class="strong c-iron">Fe²⁺</span> and enters intestinal cells mainly through the transporter <span class="strong">DMT1</span>.</p>
+        </div>
+        <div class="cap" data-cap="1">
+          <div class="k">Inside the enterocyte</div>
+          <p class="t-h2">Store or export</p>
+          <p class="t-body">Iron is either stored as <span class="strong">ferritin</span> or exported into the blood through <span class="strong c-fpn">ferroportin</span>.</p>
+        </div>
+        <div class="cap" data-cap="2">
+          <div class="k">Transport</div>
+          <p class="t-h2">Carried by transferrin</p>
+          <p class="t-body">In blood, iron binds <span class="strong c-iron">transferrin</span> and travels to the <span class="strong">bone marrow</span> for red-cell production, or to tissues for storage as ferritin.</p>
+        </div>
+        <div class="cap" data-cap="3" data-cap-to="4">
+          <div class="k">Regulation</div>
+          <p class="t-h2"><span class="c-hep">Hepcidin</span> sets the flow</p>
+          <p class="t-body" data-hep-text>High hepcidin reduces ferroportin, so less iron enters the blood.</p>
+        </div>
+      </div>
+      <div data-seg data-step="3"></div>
+    </div>
+  </div>
+  <p class="cite">Sources: <b>StatPearls</b>, Biochemistry, Iron Absorption · <b>Nemeth &amp; Ganz</b>, Int J Mol Sci 2021 · Schematic</p>
+  <aside class="notes">
+    <p>Dietary iron is absorbed mainly in the duodenum. Non-heme iron is reduced to Fe2+ and enters via DMT1. In the cell it is stored as ferritin or exported by ferroportin. In blood it binds transferrin and goes to the marrow or is stored as ferritin.</p>
+    <p>Hepcidin from the liver acts on ferroportin. High hepcidin: less iron released. Iron deficiency: hepcidin falls, so more iron is absorbed and released from stores. In our patient, chronic blood loss outpaced absorption and stores became depleted.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 32 BUDGET -->
+<section class="slide" id="budget" data-module="budget" data-title="The body's iron budget" data-section="SLO 6 · The Molecules">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.6 <span class="code">Iron metabolism</span></p>
+    <h2 class="t-title rv">Where the body keeps its iron.</h2>
+  </div>
+  <div class="split" style="grid-template-columns: 1fr 640px">
+    <div class="col"><div class="vis" data-vis></div></div>
+    <div class="col center stack">
+      <p class="t-lead rv">Total body iron averages <span class="strong num" style="white-space:nowrap">4–5 g</span>. About two-thirds of it sits inside hemoglobin.</p>
+      <p class="t-body" data-step="1">Balance is kept mainly by <span class="strong">recycling</span> and by adjusting <span class="strong">intestinal absorption</span>.</p>
+      <p class="t-body" data-step="2">When loss keeps exceeding replacement, the <span class="strong">ferritin stores</span> are spent first, then hemoglobin synthesis suffers.</p>
+    </div>
+  </div>
+  <p class="cite">Source: <b>Guyton &amp; Hall</b>, Ch. 33 · Stores are 15–30% of body iron</p>
+  <aside class="notes">
+    <p>Guyton: body iron 4–5 g: about 65% in hemoglobin, 4% myoglobin, 1% heme compounds for intracellular oxidation, 0.1% bound to transferrin in plasma, and 15–30% stored, mainly as ferritin.</p>
+    <p>The body keeps balance mainly by recycling and absorption. If loss continues for a long time and exceeds replacement, stores are depleted.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 33 HEME -->
+<section class="slide" id="heme" data-module="heme" data-title="Heme synthesis" data-section="SLO 6 · The Molecules">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.6 <span class="code">Heme synthesis: enzymes, amino acids, vitamins</span></p>
+    <h2 class="t-title rv">No iron, no heme.</h2>
+  </div>
+  <div class="body-area"><div class="vis" data-vis></div></div>
+  <div style="position:absolute; right:128px; top:118px; z-index:4" data-seg data-step="4"></div>
+  <p class="cite">Sources: <b>Guyton &amp; Hall</b>, Ch. 33 · <b>StatPearls</b>, Biochemistry, Heme Synthesis</p>
+  <aside class="notes">
+    <p>Heme synthesis starts with glycine (an amino acid) and succinyl-CoA. ALA synthase, with vitamin B6 as cofactor, makes ALA. After several steps, protoporphyrin IX forms. Ferrochelatase inserts Fe2+ to make heme. Heme plus globin chains = hemoglobin.</p>
+    <p>In iron deficiency, less Fe2+ is available for the last step → less heme → less hemoglobin → cells hypochromic and microcytic: low MCV, MCH, MCHC.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 34 HEMOGLOBIN 3D -->
+<section class="slide s-3d" id="hb" data-module="hemoglobin" data-title="Hemoglobin and oxygen (3D)" data-section="SLO 6 · The Molecules">
+  <div class="full-vis right" data-vis></div>
+  <div class="hd">
+    <p class="eyebrow rv">B-1.6 <span class="code">From heme to symptoms</span></p>
+    <h2 class="t-title rv">Four irons. Four oxygens.</h2>
+  </div>
+  <div class="split">
+    <div class="col center">
+      <div class="captions rv" style="min-height:520px">
+        <div class="cap" data-cap="0">
+          <p class="t-h2">One hemoglobin molecule</p>
+          <p class="t-body"><span class="strong">4 globin chains</span>, each with a <span class="strong">heme</span> group holding one <span class="strong c-iron">iron atom</span>. Each iron can bind one O₂ molecule.</p>
+        </div>
+        <div class="cap" data-cap="1">
+          <p class="t-h2">Capacity follows hemoglobin</p>
+          <p class="t-body">Each gram of hemoglobin binds about <span class="strong c-o2">1.34 mL of O₂</span>.</p>
+          <div data-bars style="margin-top:26px"></div>
+        </div>
+        <div class="cap" data-cap="2">
+          <p class="t-h2">That is the fatigue</p>
+          <p class="t-body">About <span class="strong c-o2">36% less</span> oxygen-carrying capacity explains her <span class="strong">fatigue, dizziness, shortness of breath, palpitations, pallor and tachycardia</span>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+  <p class="cite">Source: <b>Guyton &amp; Hall</b>, Ch. 33 (1.34 mL O₂/g Hb; women average 14 g Hb/dL) · Patient value calculated: 8.9 × 1.34 · 3D model schematic</p>
+  <aside class="notes">
+    <p>Guyton: each hemoglobin has four heme groups, each with an iron atom; each binds one O2 molecule. 1 g Hb binds about 1.34 mL O2.</p>
+    <p>A normal woman (about 14 g/dL) carries about 19 mL O2 per 100 mL blood. Our patient: 8.9 × 1.34 ≈ 11.9 mL, about 36% less. That explains the symptoms.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 35 IRON STUDIES -->
+<section class="slide" id="studies" data-module="studies" data-title="Iron studies" data-section="SLO 6 · The Molecules">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.6 <span class="code">Case correlation</span></p>
+    <h2 class="t-title rv">Iron studies confirm it.</h2>
+  </div>
+  <div class="body-area"><div class="vis" data-vis></div></div>
+  <p class="cite">Source: <b>Warner &amp; Kamran</b>, StatPearls, Iron Deficiency Anemia · Transferrin carriers are schematic</p>
+  <aside class="notes">
+    <p>Her iron studies are typical of iron deficiency: low ferritin (depleted stores), low serum iron, high TIBC (more unfilled iron-binding capacity) and low transferrin saturation.</p>
+    <p>Together: depleted iron stores and reduced iron availability for red-cell production.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 36 CHAIN -->
+<section class="slide s-chain" id="chain" data-title="Putting it together" data-section="SLO 6 · The Molecules">
+  <div class="hd">
+    <p class="eyebrow rv">B-1.6 <span class="code">Case correlation</span></p>
+    <h2 class="t-title rv">Putting it together.</h2>
+  </div>
+  <div class="chain">
+    <div class="node rv" data-step-node="0"><span class="i">1</span><span class="tx">Heavy, prolonged menstrual bleeding<small>plus a diet low in iron-rich foods</small></span></div>
+    <div class="node" data-step="1"><span class="i">2</span><span class="tx">Iron lost faster than it is replaced<small>recycling and absorption cannot keep up</small></span></div>
+    <div class="node" data-step="2"><span class="i">3</span><span class="tx">Iron stores depleted<small>ferritin ↓ · serum iron ↓ · TIBC ↑ · transferrin saturation ↓</small></span></div>
+    <div class="node" data-step="3"><span class="i">4</span><span class="tx">Too little Fe²⁺ for heme<small>heme ↓ → hemoglobin synthesis ↓</small></span></div>
+    <div class="node" data-step="4"><span class="i">5</span><span class="tx">Small, pale red cells<small>MCV 68 fL · MCH ↓ · MCHC ↓ · RDW ↑</small></span></div>
+    <div class="node" data-step="5"><span class="i">6</span><span class="tx">Less oxygen delivered<small>fatigue · dizziness · breathlessness · palpitations · pallor · tachycardia</small></span></div>
+  </div>
+  <aside class="notes">
+    <p>Chronic blood loss → iron deficiency → reduced hemoglobin production → smaller and paler red cells → low MCV, MCH, MCHC and high RDW → less oxygen-carrying capacity → symptoms.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 37 CONCLUSION -->
+<section class="slide s-concl" id="concl" data-title="Conclusion" data-section="Conclusion">
+  <div class="hd">
+    <p class="eyebrow rv">Conclusion</p>
+    <p class="verdict rv">Iron-deficiency anemia secondary to <span class="grad-text">chronic menstrual blood loss.</span></p>
+    <p class="t-lead rv">History, symptoms, CBC, blood film and iron studies all point the same way.</p>
+  </div>
+  <div class="recap">
+    <div class="rv"><b>01 · Marrow</b><span>Red marrow makes red cells; it needs iron to fill them with hemoglobin.</span></div>
+    <div class="rv"><b>02 · Liver &amp; spleen</b><span>Lobules, Kupffer cells, and red and white pulp: the clean-up tissues.</span></div>
+    <div class="rv"><b>03 · Recycling</b><span>Macrophages reclaim iron, but recycling can't cover continuous loss.</span></div>
+    <div class="rv"><b>04 · Life cycle</b><span>The marrow is stimulated by EPO but is iron-limited: reticulocytes only 0.7%.</span></div>
+    <div class="rv"><b>05 · Numbers</b><span>↓Hb ↓Hct ↓MCV ↓MCH ↓MCHC ↑RDW: microcytic, hypochromic.</span></div>
+    <div class="rv"><b>06 · Molecules</b><span>No Fe²⁺ for ferrochelatase → no heme → less hemoglobin.</span></div>
+  </div>
+  <aside class="notes">
+    <p>Overall, the patient's history, symptoms, CBC, blood film and iron studies are all consistent with iron-deficiency anemia secondary to chronic menstrual blood loss.</p>
+  </aside>
+</section>
+
+<!-- ===================================================================== 38 REFERENCES -->
+<section class="slide s-refs" id="refs" data-title="References" data-section="Conclusion">
+  <div class="hd">
+    <p class="eyebrow rv">References</p>
+    <h2 class="t-title rv">Sources.</h2>
+  </div>
+  <ol class="primary">
+    <li class="rv"><span>Hall JE. <em>Guyton and Hall Textbook of Medical Physiology</em>. 13th ed. Philadelphia: Elsevier; 2016. Chapter 33, Red Blood Cells, Anemia, and Polycythemia, p. 453.</span></li>
+    <li class="rv"><span>Vernon H, Wehrle CJ, Alia VSK, Kasi A. <em>Anatomy, Abdomen and Pelvis: Liver</em>. StatPearls, NCBI Bookshelf (NBK500014).</span></li>
+    <li class="rv"><span>Cullen JM. <em>Histopathology: Normal Liver Histology</em>. PubMed Central (PMC).</span></li>
+    <li class="rv"><span>Clark MA, Douglas M, Choi J. <em>Biology 2e</em>, §42.2 Adaptive Immune Response. Houston: OpenStax; 2018.</span></li>
+  </ol>
+  <div class="extra rv">
+    <p class="k">Also used to verify details</p>
+    <ul>
+      <li>Nemeth E, Ganz T. Hepcidin–ferroportin interaction controls systemic iron homeostasis. <i>Int J Mol Sci</i> 2021;22(12):6493. PMC8235187</li>
+      <li>Slusarczyk P, Mleczko-Sanecka K. The multiple facets of iron recycling. <i>Genes</i> 2021. PMC8469827</li>
+      <li>Warner MJ, Kamran MT. Iron Deficiency Anemia. StatPearls, NCBI Bookshelf (NBK448065)</li>
+      <li>StatPearls: Biochemistry, Iron Absorption (NBK448204) · Biochemistry, Heme Synthesis · Physiology, Bilirubin</li>
+      <li>Krishna M. Microscopic anatomy of the liver. <i>Clin Liver Dis</i> 2013;2(Suppl 1):S4–S7. PMC6448667</li>
+    </ul>
+  </div>
+  <aside class="notes"><p>References 1–4 are those cited in our research document. The second list contains sources used to verify the hepcidin–ferroportin, iron-absorption, heme-synthesis, bilirubin and liver-histology details.</p></aside>
+</section>
+
+<!-- ===================================================================== 39 THANK YOU -->
+<section class="slide s-title s-thanks" id="thanks" data-module="hero" data-variant="thanks" data-title="Thank you" data-section="Conclusion" data-hud="off">
+  <div class="full-vis" data-vis></div>
+  <div class="hd">
+    <p class="eyebrow rv">PBL Group B-1 · Dr. Waqas Hameed</p>
+    <h2 class="t-display rv">Thank you.</h2>
+    <p class="t-lead rv">Questions are welcome. Press <span class="kbd">O</span> to jump to any slide.</p>
+  </div>
+  <aside class="notes"><p>Press O to open the overview and jump straight to the slide a question is about.</p></aside>
+</section>
+
+</main>
+</div>
+
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Presenter view · When Iron Runs Low</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    @font-face { font-family: "Inter"; src: url("assets/fonts/InterVariable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    :root { --bg:#0b0b0d; --surface:rgba(255,255,255,.06); --line:rgba(255,255,255,.14); --text:#f5f5f7; --text-2:#c7c7cc; --text-3:#8e8e93; --red:#ff3b52; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:"Inter",-apple-system,system-ui,sans-serif; -webkit-font-smoothing:antialiased; height:100vh; display:grid; grid-template-rows:auto 1fr auto; }
+    header { display:flex; align-items:center; justify-content:space-between; padding:18px 28px; border-bottom:1px solid var(--line); }
+    header .sec { font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--red); font-weight:650; }
+    header .title { font-size:26px; font-weight:700; letter-spacing:-.02em; margin-top:4px; }
+    .timer { font-variant-numeric:tabular-nums; font-size:44px; font-weight:700; letter-spacing:-.02em; cursor:pointer; }
+    .timer small { display:block; font-size:12px; color:var(--text-3); font-weight:600; letter-spacing:.1em; text-transform:uppercase; text-align:right; }
+    main { display:grid; grid-template-columns:1fr 340px; min-height:0; }
+    .notes { padding:28px 36px; overflow:auto; font-size:24px; line-height:1.5; color:var(--text); }
+    .notes p { margin:0 0 18px; }
+    aside { border-left:1px solid var(--line); padding:24px; display:flex; flex-direction:column; gap:18px; min-height:0; }
+    .box { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:16px 18px; }
+    .k { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-3); font-weight:650; }
+    .v { font-size:19px; font-weight:650; margin-top:6px; }
+    .dots { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+    .dots i { width:12px; height:12px; border-radius:50%; background:rgba(255,255,255,.15); }
+    .dots i.on { background:var(--red); }
+    .list { overflow:auto; flex:1; min-height:0; }
+    .list button { display:block; width:100%; text-align:left; background:none; border:0; color:var(--text-2); font:inherit; font-size:14px; padding:7px 10px; border-radius:8px; cursor:pointer; }
+    .list button.cur { background:rgba(255,59,82,.18); color:var(--text); }
+    footer { display:flex; gap:12px; padding:16px 28px; border-top:1px solid var(--line); align-items:center; }
+    footer button { font:inherit; font-size:18px; font-weight:650; color:var(--text); background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:12px 26px; cursor:pointer; }
+    footer button.primary { background:var(--text); color:#000; }
+    footer .count { margin-left:auto; color:var(--text-3); font-variant-numeric:tabular-nums; }
+    .wait { color:var(--text-3); }
+  </style>
+</head>
+<body>
+  <header>
+    <div><div class="sec" id="sec">—</div><div class="title" id="title">Waiting for the presentation window…</div></div>
+    <div class="timer" id="timer" title="Click to reset">00:00<small>elapsed · click to reset</small></div>
+  </header>
+  <main>
+    <div class="notes" id="notes"><p class="wait">Open the presentation in another window, then press S there. This window stays in sync.</p></div>
+    <aside>
+      <div class="box"><div class="k">Build step</div><div class="dots" id="dots"></div></div>
+      <div class="box"><div class="k">Up next</div><div class="v" id="next">—</div></div>
+      <div class="box list" id="list"></div>
+    </aside>
+  </main>
+  <footer>
+    <button id="prev">← Previous</button>
+    <button id="nextb" class="primary">Next →</button>
+    <button id="black">Black screen</button>
+    <span class="count" id="count">—</span>
+  </footer>
+  <script>
+    const ch = new BroadcastChannel('iron-deck');
+    const $ = (id) => document.getElementById(id);
+    let start = Date.now(), listBuilt = false;
+    ch.onmessage = (e) => {
+      const m = e.data;
+      if (!m || m.type !== 'state') return;
+      $('sec').textContent = m.section;
+      $('title').textContent = m.title;
+      $('notes').innerHTML = m.notes || '<p class="wait">No notes for this slide.</p>';
+      $('next').textContent = m.next;
+      $('count').textContent = `${m.index + 1} / ${m.total}`;
+      $('dots').innerHTML = m.steps ? Array.from({ length: m.steps + 1 }, (_, i) => `<i class="${i <= m.step ? 'on' : ''}"></i>`).join('') : '<span class="wait" style="font-size:13px">single view</span>';
+      if (!listBuilt && m.list) {
+        $('list').innerHTML = m.list.map((t, i) => `<button data-i="${i}">${String(i + 1).padStart(2, '0')} · ${t}</button>`).join('');
+        listBuilt = true;
+      }
+      document.querySelectorAll('#list button').forEach((b) => b.classList.toggle('cur', +b.dataset.i === m.index));
+      document.querySelector('#list button.cur')?.scrollIntoView({ block: 'nearest' });
+    };
+    ch.postMessage({ type: 'hello' });
+    $('prev').onclick = () => ch.postMessage({ type: 'prev' });
+    $('nextb').onclick = () => ch.postMessage({ type: 'next' });
+    $('black').onclick = () => ch.postMessage({ type: 'black' });
+    $('list').onclick = (e) => { const b = e.target.closest('button'); if (b) ch.postMessage({ type: 'goto', index: +b.dataset.i }); };
+    $('timer').onclick = () => (start = Date.now());
+    addEventListener('keydown', (e) => {
+      if (['ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); ch.postMessage({ type: 'next' }); }
+      if (['ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); ch.postMessage({ type: 'prev' }); }
+      if (e.key === 'b') ch.postMessage({ type: 'black' });
+    });
+    setInterval(() => {
+      const s = Math.floor((Date.now() - start) / 1000);
+      $('timer').firstChild.textContent = `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+    }, 500);
+  </script>
+</body>
+</html>
