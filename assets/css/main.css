@@ -1048,3 +1048,30 @@ aside.notes { display: none; }
 .hud-nav button.cur { background: var(--blood); border-color: var(--blood); color: #fff; }
 .hud-nav button.done:not(.cur) { color: var(--good); border-color: color-mix(in srgb, var(--good) 50%, transparent); }
 .hud-section { align-items: center; bottom: 42px; }
+
+/* ---------- university logo ---------- */
+.brand {
+  position: absolute;
+  z-index: 25;
+  left: 1577px;
+  top: 40px;
+  width: 215px;
+  height: 56px;
+  pointer-events: none;
+  transition: left 1s var(--ease), top 1s var(--ease), width 1s var(--ease), height 1s var(--ease);
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.55));
+}
+#stage[data-brand="hero"] .brand { left: 128px; top: 76px; width: 369px; height: 96px; }
+.brand img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.5s var(--ease);
+}
+.brand .b-light { opacity: 0; }
+:root[data-theme="light"] .brand { filter: none; }
+:root[data-theme="light"] .brand .b-dark { opacity: 0; }
+:root[data-theme="light"] .brand .b-light { opacity: 1; }
+body:not(.ready) .brand { opacity: 0; }

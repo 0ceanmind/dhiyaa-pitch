@@ -137,6 +137,7 @@ export class Deck {
       el.removeAttribute('aria-hidden');
       this.index = i;
       this.step = -1;
+      this.stage.dataset.brand = el.dataset.brand || 'corner';
       try { this.ctrls[i]?.enter?.(dir); } catch (e) { console.error(e); }
       this.updateHud();
     }
