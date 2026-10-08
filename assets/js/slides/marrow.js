@@ -174,14 +174,17 @@ export default function setup(slide, api) {
   }
 
   // ---------------------------------------------------------- labels
+  const mid = nodes.filter((n) => n.x > -1 && n.x < 3);
+  const byX = (mid.length >= 2 ? mid : nodes).slice().sort((a, b) => b.y - a.y);
+  const retRight = byX[0];
   const anchor = (v) => { const o = new THREE.Object3D(); o.position.copy(v); world.add(o); return o; };
   const L = {
     sinA: labels.add('Sinusoid', css('--blood'), anchor(new THREE.Vector3(-7.5, SIN_Y + SIN_R + 0.2, 0))),
     sinB: labels.add('Sinusoid', css('--blood'), anchor(new THREE.Vector3(-7.5, -SIN_Y - SIN_R - 0.3, 0))),
     cord: labels.add('Marrow cord', '#c9c0ff', anchor(new THREE.Vector3(0.2, -1.4, 2.2))),
-    fiber: labels.add('Reticulin fibers · type III collagen', '#e9e1d2', anchor(nodes[3].clone())),
-    retcell: labels.add('Reticular cell', '#e9e1d2', anchor(nodes[0].clone())),
-    fat: labels.add('Adipocyte', '#ffd97a', anchor(fats[0].position.clone().add(new THREE.Vector3(0, 1.8, 0)))),
+    fiber: labels.add('Reticulin fibers · type III collagen', '#e9e1d2', anchor(byX[byX.length - 1].clone())),
+    retcell: labels.add('Reticular cell', '#e9e1d2', anchor(retRight.clone())),
+    fat: labels.add('Adipocyte', '#ffd97a', anchor(fats[0].position.clone().add(new THREE.Vector3(0, 1.8, 0))), { dx: -110 }),
     plasma: labels.add('Developing cells', '#c9c0ff', anchor(plasma[0].position.clone().add(new THREE.Vector3(0, 0.8, 0)))),
     mac: labels.add('Central macrophage', '#a98cf5', anchor(ISL.clone().add(new THREE.Vector3(0, 0.4, 1.6))), { dy: -10 }),
     blast: labels.add('Erythroid precursors', '#e44a64', anchor(ISL.clone().add(new THREE.Vector3(2.2, 1.7, 0.6)))),

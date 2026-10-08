@@ -18,6 +18,8 @@ Open the published page in Chrome, Edge or Safari and press **F** for full scree
 
 | Key | Action |
 | --- | --- |
+| `H` | **Hub**: the six points, ready for whichever student is called |
+| `Shift` + `1`…`6` | Open point 1–6 directly |
 | `→` `Space` `PgDn` (clicker) | Next build step / slide |
 | `←` `PgUp` | Previous |
 | `Shift` + `→` | Skip to the next slide |
@@ -27,6 +29,16 @@ Open the published page in Chrome, Edge or Safari and press **F** for full scree
 | `B` or `.` | Black screen |
 | `12` then `Enter` | Jump to slide 12 |
 | `?` | Shortcut help |
+
+### Random-student format
+
+The judges pick students at random to present one of the six points. The deck is built for that:
+
+1. Show the case, then the **hub** (slide 3).
+2. Click the point the student was given. Each point is self-contained: title slide → visuals → **key-points** slide with the link to our patient.
+3. Press **← All six points** (or `H`) to return. Presented points get a ✓, and the small `⌂ 1–6` buttons at the bottom-right jump anywhere.
+
+Slides carry only headings and short bullets. The full explanations are in the speaker notes (press `S`).
 
 Interactive elements (switches, the 3D models, the 120-day slider, the anemia list) can be clicked or dragged at any time. Each switch also advances automatically with the build steps, so you can present with a clicker alone.
 

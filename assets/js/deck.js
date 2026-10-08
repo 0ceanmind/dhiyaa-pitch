@@ -19,6 +19,7 @@ export class Deck {
     this.themeCbs = new Set();
     this.leaving = [];
     this.numBuf = '';
+    this.done = new Set();
     this.channel = 'BroadcastChannel' in window ? new BroadcastChannel('iron-deck') : null;
   }
 
@@ -214,10 +215,17 @@ export class Deck {
     hud.className = 'hud';
     hud.innerHTML = `
       <div class="hud-steps"></div>
-      <div class="hud-section"><span class="sec"></span><span class="n"></span></div>
+      <div class="hud-section"><span class="hud-nav"></span><span class="n"></span></div>
       <div class="hud-progress"><i></i></div>`;
     this.stage.appendChild(hud);
     this.hud = hud;
+    const hnav = hud.querySelector('.hud-nav');
+    hnav.innerHTML = `<button data-go="roadmap" title="All six points (H)">⌂</button>` +
+      [1, 2, 3, 4, 5, 6].map((n) => `<button data-go="d${n}" data-slo-nav="${n}" title="Point ${n} (Shift+${n})">${n}</button>`).join('');
+    hnav.addEventListener('click', (e) => {
+      const b = e.target.closest('button');
+      if (b) this.gotoId(b.dataset.go);
+    });
 
     const nav = document.createElement('div');
     nav.className = 'navbtns';
@@ -269,6 +277,8 @@ export class Deck {
       <dt><span class="k">←</span><span class="k">PgUp</span></dt><dd>Previous</dd>
       <dt><span class="k">Shift</span> + <span class="k">→</span></dt><dd>Skip to next slide</dd>
       <dt><span class="k">F</span></dt><dd>Full screen</dd>
+      <dt><span class="k">H</span></dt><dd>Hub: the six points</dd>
+      <dt><span class="k">Shift</span> + <span class="k">1</span>…<span class="k">6</span></dt><dd>Open point 1–6 directly</dd>
       <dt><span class="k">O</span></dt><dd>Overview of all slides</dd>
       <dt><span class="k">S</span></dt><dd>Presenter view (notes + timer) in a new window</dd>
       <dt><span class="k">T</span></dt><dd>Switch light / dark (for bright rooms)</dd>
@@ -294,8 +304,11 @@ export class Deck {
 
   updateHud() {
     const s = this.cur;
-    const sec = this.hud.querySelector('.sec');
-    sec.textContent = s.dataset.section || '';
+    const m = /^SLO (\d)/.exec(s.dataset.section || '');
+    const cur = m ? m[1] : (s.id === 'roadmap' ? 'hub' : '');
+    this.hud.querySelectorAll('.hud-nav button').forEach((b) => {
+      b.classList.toggle('cur', cur === 'hub' ? b.dataset.go === 'roadmap' : b.dataset.sloNav === cur);
+    });
     this.hud.querySelector('.n').textContent = `${String(this.index + 1).padStart(2, '0')} / ${this.total}`;
     this.hud.querySelector('.hud-progress i').style.width = `${(this.index / (this.total - 1)) * 100}%`;
     this.hud.classList.toggle('hidden', s.dataset.hud === 'off');
@@ -309,6 +322,11 @@ export class Deck {
       wrap.innerHTML = n > 0 ? '<i></i>'.repeat(n + 1) : '';
     }
     [...wrap.children].forEach((d, k) => d.classList.toggle('on', k <= this.step));
+  }
+
+  markDone(n) {
+    this.done.add(String(n));
+    document.querySelectorAll(`[data-slo-nav="${n}"], #roadmap .tile[data-slo="${n}"]`).forEach((el) => el.classList.add('done'));
   }
 
   toast(msg) {
@@ -385,6 +403,13 @@ export class Deck {
     const k = e.key;
     const overlayOpen = this.overview.classList.contains('open') || this.help.classList.contains('open');
 
+    if (e.shiftKey && /^Digit[1-6]$/.test(e.code)) {
+      e.preventDefault();
+      this.toggleOverview(false); this.toggleHelp(false);
+      this.gotoId(`d${e.code.slice(5)}`);
+      return;
+    }
+
     if (/^[0-9]$/.test(k) && !e.metaKey && !e.ctrlKey) {
       this.numBuf += k;
       clearTimeout(this._numT);
@@ -453,9 +478,11 @@ export class Deck {
       case 'S':
         this.openPresenter(); break;
       case '?':
+        this.toggleOverview(false); this.toggleHelp(); break;
       case 'h':
       case 'H':
-        this.toggleOverview(false); this.toggleHelp(); break;
+        this.toggleOverview(false); this.toggleHelp(false); this.black.classList.remove('on');
+        this.gotoId('roadmap'); break;
       default:
         break;
     }

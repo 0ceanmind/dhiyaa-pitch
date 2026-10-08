@@ -11,9 +11,9 @@ const STORE = { x: 395, y: 500 };
 const FPN_ANG = [-0.62, -0.2, 0.22, 0.62];
 
 const MODES = {
-  3: { hep: 3, text: 'Hepcidin binds ferroportin, causing its <span class="strong">internalization and degradation</span>. That sets how much iron leaves the cell.' },
-  4: { hep: 0, text: '<span class="strong">Iron deficiency:</span> hepcidin is suppressed, so ferroportin stays active and <span class="strong">more recycled iron is released</span>.' },
-  5: { hep: 14, text: '<span class="strong">Inflammation:</span> IL-6 stimulates hepcidin. Ferroportin is degraded, iron is <span class="strong">trapped in macrophages</span>, and plasma iron falls (anemia of inflammation).' },
+  3: { hep: 3, text: 'Binds ferroportin → degraded' },
+  4: { hep: 0, text: 'Iron deficiency: hepcidin ↓ → more iron out' },
+  5: { hep: 14, text: 'Inflammation: IL-6 → hepcidin ↑ → iron trapped' },
 };
 
 export default function setup(slide, api) {

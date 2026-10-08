@@ -4,14 +4,14 @@ import { THREE, stage3D, addLights, cellGrid, evalShape, colorsFor, discShape, s
 import { h, damp } from '../lib/util.js';
 
 const TYPES = [
-  { name: 'Blood loss: acute', shape: 'normal', desc: 'After a hemorrhage, plasma is replaced within 1–3 days, which <b>dilutes</b> the remaining red cells.' },
-  { name: 'Blood loss: chronic', shape: 'micro', patient: true, desc: 'Iron cannot be absorbed as fast as it is lost, so cells are <b>small and hemoglobin-poor</b>: microcytic, hypochromic.' },
-  { name: 'Aplastic', shape: 'normal', desc: '<b>Bone-marrow failure</b> from radiation, chemotherapy, toxic substances or autoimmune disease. About half the cases are idiopathic.' },
-  { name: 'Megaloblastic', shape: 'macro', desc: 'Lack of <b>vitamin B12, folic acid or intrinsic factor</b> (gastric mucosal atrophy, gastrectomy, malabsorption) gives large, fragile cells.' },
-  { name: 'Hereditary spherocytosis', shape: 'sphere', desc: 'A hemolytic anemia: <b>spherical cells</b> rupture as they pass through the spleen.' },
-  { name: 'Sickle cell', shape: 'sickle', desc: '<b>Hemoglobin S</b> crystallizes when oxygen is low, sickling the cell, damaging its membrane and blocking vessels.' },
-  { name: 'Erythroblastosis fetalis', shape: 'normal', ab: true, desc: 'Antibodies from an <b>Rh-negative mother</b> attack the <b>Rh-positive</b> red cells of the fetus.' },
-  { name: 'Severe hypochromic', shape: 'pale', desc: 'A deficiency of <b>transferrin</b>, the protein that carries iron to the bone marrow.' },
+  { name: 'Blood loss: acute', shape: 'normal', desc: 'Plasma replaced → cells <b>diluted</b>' },
+  { name: 'Blood loss: chronic', shape: 'micro', patient: true, desc: 'Iron lost → <b>small, pale</b> cells' },
+  { name: 'Aplastic', shape: 'normal', desc: '<b>Marrow failure</b> · half idiopathic' },
+  { name: 'Megaloblastic', shape: 'macro', desc: '↓ B12 / folate / intrinsic factor → <b>large</b> cells' },
+  { name: 'Hereditary spherocytosis', shape: 'sphere', desc: '<b>Spherical</b> cells rupture in the spleen' },
+  { name: 'Sickle cell', shape: 'sickle', desc: '<b>HbS</b> crystallizes at low O₂ → sickling' },
+  { name: 'Erythroblastosis fetalis', shape: 'normal', ab: true, desc: 'Rh⁻ mother\'s <b>antibodies</b> vs Rh⁺ fetal cells' },
+  { name: 'Severe hypochromic', shape: 'pale', desc: '<b>Transferrin</b> deficiency' },
 ];
 
 export default function setup(slide, api) {
@@ -75,7 +75,7 @@ export default function setup(slide, api) {
     b.addEventListener('click', () => api.setStep(i));
     return b;
   });
-  desc.innerHTML = '<div class="card" style="padding:28px 34px"><p class="t-body" style="font-size:32px" data-d></p></div>';
+  desc.innerHTML = '<div class="card" style="padding:26px 34px"><p class="one" style="margin:0; color:var(--text); font-size:40px" data-d></p></div>';
   const dEl = desc.querySelector('[data-d]');
 
   const drag = dragRotate(box.querySelector('canvas'), pivot, { auto: 0.25, minX: -0.2, maxX: 1.5 });

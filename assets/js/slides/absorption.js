@@ -9,8 +9,8 @@ const STORE = { x: 455, y: 520 };
 const FPN = [{ x: BL, y: 250, s: 'on', t: 0 }, { x: BL, y: 380, s: 'on', t: 0 }];
 
 const TEXT = {
-  3: 'High hepcidin reduces ferroportin, so <span class="strong">less iron enters the blood</span>.',
-  4: 'In iron deficiency, hepcidin falls, so <span class="strong">more iron is absorbed and released from stores</span>. In our patient, chronic blood loss still outpaced it, and stores ran out.',
+  3: 'High hepcidin → less iron out',
+  4: 'Iron deficiency → hepcidin ↓ → more iron in',
 };
 
 export default function setup(slide, api) {

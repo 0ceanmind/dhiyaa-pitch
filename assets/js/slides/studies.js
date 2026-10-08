@@ -14,19 +14,19 @@ export default function setup(slide, api) {
 
   const cards = [
     {
-      k: 'Ferritin', dir: '↓', col: 'var(--bad)', mean: 'Iron stores depleted',
+      k: 'Ferritin', dir: '↓', col: 'var(--bad)', mean: 'Stores empty',
       svg: `<circle cx="120" cy="110" r="78" fill="none" stroke="rgba(255,159,10,.65)" stroke-width="4" stroke-dasharray="8 8"/>${FE(104, 120)}${FE(132, 98)}`,
     },
     {
-      k: 'Serum iron', dir: '↓', col: 'var(--bad)', mean: 'Less iron in the plasma',
+      k: 'Serum iron', dir: '↓', col: 'var(--bad)', mean: 'Low plasma iron',
       svg: `<path d="M120 26 C 160 80, 190 118, 190 150 a70 70 0 0 1 -140 0 C 50 118, 80 80, 120 26Z" fill="rgba(255,200,170,.12)" stroke="rgba(255,200,170,.55)" stroke-width="3"/>${FE(104, 150)}${FE(140, 168)}`,
     },
     {
-      k: 'TIBC', dir: '↑', col: 'var(--iron)', mean: 'More unfilled iron-binding capacity on transferrin',
+      k: 'TIBC', dir: '↑', col: 'var(--iron)', mean: 'More empty binding sites',
       svg: [[60, 50], [120, 50], [180, 50], [60, 110], [120, 110], [180, 110], [60, 170], [120, 170], [180, 170]].map(([x, y], i) => TF(x, y, i === 4 ? 1 : 0)).join(''),
     },
     {
-      k: 'Transferrin saturation', dir: '↓', col: 'var(--bad)', mean: 'Few binding sites actually carry iron',
+      k: 'Transferrin saturation', dir: '↓', col: 'var(--bad)', mean: 'Few sites filled',
       svg: `<circle cx="120" cy="110" r="74" fill="none" stroke="var(--surface-3)" stroke-width="26"/>
             <circle cx="120" cy="110" r="74" fill="none" stroke="#ffae2e" stroke-width="26" stroke-dasharray="${0.1 * 2 * Math.PI * 74} ${2 * Math.PI * 74}" transform="rotate(-90 120 110)" stroke-linecap="round"/>`,
     },
@@ -39,12 +39,12 @@ export default function setup(slide, api) {
         <span style="font-size:36px; font-weight:750; letter-spacing:-.02em; line-height:1.1">${c.k}</span>
         <span style="font-size:64px; font-weight:800; color:${c.col}; line-height:1">${c.dir}</span>
       </div>
-      <p class="t-body" style="font-size:29px">${c.mean}</p>`;
+      <p class="one" style="margin:0">${c.mean}</p>`;
     return el;
   });
 
   const banner = h('div', { 'data-step': '4', style: 'position:absolute; left:0; right:0; bottom:6px; padding:26px 36px; border-radius:26px; background:linear-gradient(100deg, color-mix(in srgb, var(--blood) 28%, transparent), color-mix(in srgb, var(--iron) 16%, transparent))' }, box);
-  banner.innerHTML = '<p class="t-h2" style="font-size:44px">Depleted iron stores and reduced iron available for red-cell production.</p>';
+  banner.innerHTML = '<p class="t-h2" style="font-size:48px">Iron deficiency confirmed.</p>';
   box.style.paddingBottom = '150px';
   return { steps: 4 };
 }

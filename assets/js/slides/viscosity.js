@@ -3,24 +3,9 @@
 import { h, makeCanvas, segmented, rng, damp, css, clamp } from '../lib/util.js';
 
 const STATES = [
-  {
-    key: 'Severe anemia', n: 16, v: 380, visc: 1.5, viscLabel: '≈ 1.5×', hct: 'Hematocrit ↓',
-    co: 'Cardiac output ↑, sometimes 3–4× normal',
-    why: 'Low viscosity lowers resistance, and hypoxia dilates peripheral vessels.',
-    risk: 'Heart strain: exercise brings severe hypoxia and heart failure.',
-  },
-  {
-    key: 'Normal', n: 46, v: 210, visc: 3, viscLabel: '≈ 3×', hct: 'Hematocrit 40–45%',
-    co: 'Cardiac output normal',
-    why: 'Viscosity depends mainly on the concentration of red cells.',
-    risk: '',
-  },
-  {
-    key: 'Polycythemia vera', n: 96, v: 70, visc: 10, viscLabel: 'up to 10×', hct: 'Hematocrit 60–70%',
-    co: 'Cardiac output near normal',
-    why: 'High viscosity is offset by a total blood volume that can nearly double.',
-    risk: 'Sluggish flow · hypertension in about ⅓ · ruddy skin with a cyanotic tint.',
-  },
+  { key: 'Severe anemia', n: 16, v: 380, visc: 1.5, viscLabel: '≈ 1.5×', hct: 'Hematocrit ↓', co: 'Cardiac output ↑ (3–4×)', risk: 'Heart strain on exertion' },
+  { key: 'Normal', n: 46, v: 210, visc: 3, viscLabel: '≈ 3×', hct: 'Hematocrit 40–45%', co: 'Normal cardiac output', risk: '' },
+  { key: 'Polycythemia vera', n: 96, v: 70, visc: 10, viscLabel: 'up to 10×', hct: 'Hematocrit 60–70%', co: 'Cardiac output ≈ normal', risk: 'Sluggish flow · ↑ BP · ruddy skin' },
 ];
 
 export default function setup(slide, api) {
@@ -39,11 +24,10 @@ export default function setup(slide, api) {
       <p class="t-cap" style="letter-spacing:.12em; font-weight:650; margin:0 0 16px">BLOOD VISCOSITY · × WATER</p>
       <div data-bars style="display:grid; gap:14px"></div>
     </div>
-    <div class="card" style="padding:26px 30px">
-      <p class="t-label" data-co style="font-size:32px"></p>
-      <p class="t-body" data-why style="font-size:28px; margin-top:10px"></p>
-      <p class="t-body" data-risk style="font-size:28px; margin-top:10px; color:var(--text)"></p>
-    </div>`;
+    <ul class="pts sm" style="margin-top:8px">
+      <li data-co></li>
+      <li data-risk></li>
+    </ul>`;
   const barsEl = panel.querySelector('[data-bars]');
   const bars = STATES.map((st) => {
     const row = h('div', { style: 'display:grid; grid-template-columns: 250px 1fr 140px; align-items:center; gap:16px; transition: opacity .5s' }, barsEl);
@@ -52,7 +36,7 @@ export default function setup(slide, api) {
       <span class="num" style="font-size:30px; font-weight:750; text-align:right">${st.viscLabel}</span>`;
     return row;
   });
-  const coEl = panel.querySelector('[data-co]'), whyEl = panel.querySelector('[data-why]'), riskEl = panel.querySelector('[data-risk]');
+  const coEl = panel.querySelector('[data-co]'), riskEl = panel.querySelector('[data-risk]');
 
   const cells = [...Array(110)].map(() => ({ x: R(), y: (R() * 2 - 1) * 0.86, rot: R() * Math.PI, w: (R() - 0.5) * 3, s: 0.85 + R() * 0.3 }));
   let cur = 1, vis = 46, speed = 210, time = 0, hctTxt = STATES[1].hct;
@@ -62,7 +46,6 @@ export default function setup(slide, api) {
     bars.forEach((b, k) => (b.style.opacity = k === i ? 1 : 0.35));
     const st = STATES[i];
     coEl.textContent = st.co;
-    whyEl.textContent = st.why;
     riskEl.textContent = st.risk;
     riskEl.style.display = st.risk ? '' : 'none';
     hctTxt = st.hct;

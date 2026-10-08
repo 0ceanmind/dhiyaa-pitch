@@ -29,6 +29,7 @@ const registry = {
   heme: () => import('./slides/heme.js'),
   hemoglobin: () => import('./slides/hemoglobin.js'),
   studies: () => import('./slides/studies.js'),
+  summary: () => import('./slides/summary.js'),
 };
 
 const deck = new Deck({

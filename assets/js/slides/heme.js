@@ -79,9 +79,8 @@ export default function setup(slide, api) {
   // Guyton note
   const note = s('g', { opacity: 0 }, svg);
   s('rect', { x: 0, y: Y + 200, width: 820, height: 200, rx: 28, fill: 'var(--surface)', stroke: 'var(--line)' }, note);
-  const lines = ['When hemoglobin formation is deficient, cells hold', 'less hemoglobin, and their volume may also fall,', 'because there is less hemoglobin to fill them.'];
-  lines.forEach((t, i) => s('text', { x: 40, y: Y + 258 + i * 40, 'font-size': 29, 'font-weight': 550, fill: 'var(--text)', text: t }, note));
-  s('text', { x: 40, y: Y + 378, 'font-size': 22, 'font-weight': 650, fill: 'var(--text-3)', text: 'GUYTON & HALL, CH. 33 (PARAPHRASED)' }, note);
+  s('text', { x: 40, y: Y + 296, 'font-size': 40, 'font-weight': 700, fill: 'var(--text)', text: 'Less hemoglobin → smaller cells' }, note);
+  s('text', { x: 40, y: Y + 350, 'font-size': 22, 'font-weight': 650, fill: 'var(--text-3)', text: 'GUYTON & HALL, CH. 33' }, note);
 
   let step = 0, mode = 0, def = 0, ironA = 0, outA = 0, noteA = 0;
   const seg = segmented(slide.querySelector('[data-seg]'), ['Iron available', 'Iron deficient'], (i) => (mode = i), 0);

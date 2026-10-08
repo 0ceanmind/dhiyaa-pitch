@@ -65,8 +65,7 @@ export default function setup(slide, api) {
   const outro = h('div', { style: 'position:absolute; left:820px; right:0; top:200px; display:grid; gap:22px; opacity:0; transition:opacity .8s' }, box);
   outro.innerHTML = `
     <div class="t-h2" style="font-size:44px">Recycled</div>
-    <div class="t-body" style="font-size:30px"><span class="strong c-iron">Iron</span> → transferrin → bone marrow (new red cells), or stored as ferritin</div>
-    <div class="t-body" style="font-size:30px"><span class="strong c-bili">Porphyrin</span> → bilirubin → secreted by the liver into bile</div>`;
+    <ul class="pts sm"><li><span class="c-iron">Iron</span> → marrow or ferritin</li><li><span class="c-bili">Porphyrin</span> → bilirubin → bile</li></ul>`;
 
   let day = 0, target = 0, auto = true, step = 0, time = 0, burst = 0;
 
@@ -101,7 +100,7 @@ export default function setup(slide, api) {
       st1.setAttribute('stop-color', mix('#d8274a', '#86243c', age));
       st2.setAttribute('stop-color', mix('#9e0b25', '#4f0f20', age));
       membrane.setAttribute('stroke-dasharray', age > 0.7 ? `${(30 - age * 18).toFixed(0)} ${(age * 14).toFixed(0)}` : 'none');
-      status.textContent = day >= 119.5 ? '' : day > 95 ? 'May rupture in tight spots, such as the red pulp of the spleen' : '';
+      status.textContent = day >= 119.5 ? '' : day > 95 ? 'Fragile: ruptures in the spleen' : '';
 
       const broken = day >= 119.5;
       burst = damp(burst, broken ? 1 : 0, broken ? 2.2 : 8, dt);

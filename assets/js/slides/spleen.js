@@ -90,8 +90,8 @@ export default function setup(slide, api) {
     white: label(470, 150, 520, 60, 'White pulp', '#c9b8ff'),
     art: label(560, 560, 600, 640, 'Branch of splenic artery', '#ff453a'),
     red: label(590, 640, 640, 730, 'Red pulp', '#d9223f'),
-    cords: label(860, 380, 900, 300, 'Splenic cords', '#ff4d66'),
-    sin: label(150, 380, 120, 300, 'Sinusoids', '#ff9aa9'),
+    cords: label(860, 380, 820, 300, 'Splenic cords', '#ff4d66'),
+    sin: label(150, 420, 200, 330, 'Sinusoids', '#ff9aa9'),
   };
   const stepLabs = [['capsule', 'white', 'red'], ['capsule', 'trab', 'trab2'], ['white', 'art'], ['red', 'cords', 'sin']];
   const focus = [null, 'trab', 'white', 'red'];
